@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Zeitgeist'18 - Retro Games</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" type="image/png" href="images/zlogo.png"/>
+
+
+<style type="text/css">
+	
+
+
+
+
+*{  font-family: "Comic Sans MS", cursive, sans-serif;
+ }
+
+
+.social {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 10;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 2em;
+}
+
+
+.timer {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+position: fixed;
+    right: 20px;
+    z-index: 10;
+bottom: 20px;
+background: linear-gradient(120deg, #6559ae, #ff7159, #6559ae);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-animation: gradient 3s ease-in-out infinite;
+    -webkit-animation: gradient 3s ease-in-out infinite;
+    animation: gradient 3s ease-in-out infinite;
+    font-size: 1.;
+    font-weight: 800;
+        -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    margin-top: 100px;
+
+}
+
+.timer p{
+	margin: 0;
+	font-weight: 800 !important;
+}
+
+.social i{padding: 0em 0.2em;background: linear-gradient(120deg, #6559ae, #ff7159, #6559ae);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-animation: gradient 3s ease-in-out infinite;
+    -webkit-animation: gradient 3s ease-in-out infinite;
+    animation: gradient 3s ease-in-out infinite;}
+
+
+a.white-mode, a.white-mode:link, a.white-mode:visited, a.white-mode:active {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  background: #212121;
+  padding: 4px 8px;
+  color: #f7f7f7;
+}
+a.white-mode:hover, a.white-mode:link:hover, a.white-mode:visited:hover, a.white-mode:active:hover {
+  background: #edf3f8;
+  color: #212121;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #edf3f8;
+  background: -moz-radial-gradient(center, ellipse cover, #edf3f8 1%, #000 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, #edf3f8 1%, #dee3e8 100%);
+  background: radial-gradient(ellipse at center, #edf3f8 1%, #dee3e8 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf3f8', endColorstr='#dee3e8',GradientType=1 );
+}
+
+.title {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%) translateY(-50%);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-align: center;
+  width: 60%;
+}
+.title h1 {
+  position: relative;
+  color: #000000;
+  font-weight: 300;
+  font-size: 46px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.title h2 {
+  font-weight: 600;
+  font-size: 60px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.title h3 {
+  font-weight: 800;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  line-height: 2;
+  color: #5e7283;
+  letter-spacing: 2px;
+}
+.title p {
+  font-weight: 200;
+  font-size: 16px;
+  color: #5e7283;
+}
+
+.pentahedron {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  fill: #3E82F7;
+}
+
+.point {
+  fill: #8491A3;
+}
+
+.rhombus {
+  fill: #2DA94F;
+  stroke: #2DA94F;
+}
+
+.x {
+  fill: #FDBD00;
+}
+
+.circle {
+  fill: #ED412D;
+}
+
+svg {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  transform: translateZ(0px);
+}
+
+
+
+.fbutton {
+  display: block;
+  width: 220px;
+  height: 70px;
+  z-index: 1;
+  margin-top: 6em !important;
+}
+.fbutton:after {
+  content: '';
+  background: linear-gradient(120deg, #6559ae, #ff7159, #6559ae);
+  background-size: 400% 400%;
+  -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 216px 4px, 216px 66px, 4px 66px, 4px 100%, 100% 100%, 100% 0%, 0% 0%);
+  -moz-animation: gradient 3s ease-in-out infinite, border 1s forwards ease-in-out reverse;
+  -webkit-animation: gradient 3s ease-in-out infinite, border 1s forwards ease-in-out reverse;
+  animation: gradient 3s ease-in-out infinite, border 1s forwards ease-in-out reverse;
+}
+.fbutton > span {
+  display: block;
+  background: linear-gradient(120deg, #6559ae, #ff7159, #6559ae);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-animation: gradient 3s ease-in-out infinite;
+  -webkit-animation: gradient 3s ease-in-out infinite;
+  animation: gradient 3s ease-in-out infinite;
+}
+
+.fbutton{text-decoration: none !important;}
+.fbutton:hover{text-decoration: none !important;}
+.fbutton:active{text-decoration: none !important;}
+
+
+
+/* helpers */
+.absolute-centering, body:after, .fbutton, .fbutton:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.text-formatting, .fbutton {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 70px;
+  font-family: 'Squada One', cursive;
+  font-size: 28px;
+}
+
+/* motion */
+@-moz-keyframes gradient {
+  0% {
+    background-position: 14% 0%;
+  }
+  50% {
+    background-position: 87% 100%;
+  }
+  100% {
+    background-position: 14% 0%;
+  }
+}
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 14% 0%;
+  }
+  50% {
+    background-position: 87% 100%;
+  }
+  100% {
+    background-position: 14% 0%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 14% 0%;
+  }
+  50% {
+    background-position: 87% 100%;
+  }
+  100% {
+    background-position: 14% 0%;
+  }
+}
+@-moz-keyframes border {
+  0% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 216px 4px, 216px 66px, 4px 66px, 4px 100%, 100% 100%, 100% 0%, 0% 0%);
+  }
+  25% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 216px 4px, 216px 66px, 216px 66px, 216px 100%, 100% 100%, 100% 0%, 0% 0%);
+  }
+  50% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 216px 4px, 216px 4px, 216px 4px, 216px 4px, 216px 4px, 100% 0%, 0% 0%);
+  }
+  75% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 0%, 0% 0%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 0% 100%);
+  }
+}
+@-webkit-keyframes border {
+  0% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 216px 4px, 216px 66px, 4px 66px, 4px 100%, 100% 100%, 100% 0%, 0% 0%);
+  }
+  25% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 216px 4px, 216px 66px, 216px 66px, 216px 100%, 100% 100%, 100% 0%, 0% 0%);
+  }
+  50% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 216px 4px, 216px 4px, 216px 4px, 216px 4px, 216px 4px, 100% 0%, 0% 0%);
+  }
+  75% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 0%, 0% 0%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 0% 100%);
+  }
+}
+@keyframes border {
+  0% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 216px 4px, 216px 66px, 4px 66px, 4px 100%, 100% 100%, 100% 0%, 0% 0%);
+  }
+  25% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 216px 4px, 216px 66px, 216px 66px, 216px 100%, 100% 100%, 100% 0%, 0% 0%);
+  }
+  50% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 216px 4px, 216px 4px, 216px 4px, 216px 4px, 216px 4px, 100% 0%, 0% 0%);
+  }
+  75% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 0%, 0% 0%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 0% 100%);
+  }
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    background-image: url(./images/guitar.gif);
+    background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
+        background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left bottom; 
+    text-align:center;
+}
+
+.sidenav a {
+        padding: 20px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
+}
+
+.sidenav a:hover{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size:5em;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+.sidenav2 {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align:center;
+    margin-top: -100px;
+
+}
+
+.sidenav2 a {
+        padding: 20px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
+}
+
+.sidenav2 a:hover{
+    color: #f1f1f1;
+}
+
+.sidenav2 .closebtn2 {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size:5em;
+    margin-left: 50px;
+    z-index: 20;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav2 {padding-top: 15px;}
+  .sidenav2 a {font-size: 18px;}
+}
+
+.arrow-down{
+  width:60px;
+  height:40px;
+  margin:0 0 0 -30px;
+  position:absolute;
+  left:50%;
+  bottom:0px;
+  -webkit-animation: arrow 0.5s 1s infinite ease-out alternate;
+  
+}
+
+.arrow-down:hover{
+   -webkit-animation-play-state: paused;
+}
+
+.left{
+  position:absolute;
+  height:10px;
+  width:40px;
+  background:black;
+  -webkit-transform:rotate(240deg);
+  top:10px;
+  left:10px;
+  -webkit-border-radius:4px;
+  -webkit-transform-origin:5px 50%;
+  -webkit-animation: leftArrow 0.5s 1s infinite ease-out alternate;
+}
+
+.right{
+  position:absolute;
+  height:10px;
+  width:40px;
+  background:black;
+  -webkit-transform:rotate(-60deg);
+  top:10px;
+  left:10px;
+  -webkit-border-radius:4px;
+  -webkit-transform-origin:5px 50%;
+  -webkit-animation: rightArrow 0.5s 1s infinite ease-out alternate;
+}
+
+
+
+
+@-webkit-keyframes arrow{
+  0% {
+    bottom:0px;
+  }
+  100%{
+    bottom:40px;
+  }
+}
+
+
+@-webkit-keyframes leftArrow{
+  0% {
+  }
+  100%{
+    -webkit-transform:rotate(225deg);
+  }
+}
+
+@-webkit-keyframes rightArrow{
+  0% {
+  }
+  100%{
+    -webkit-transform:rotate(-45deg);
+  }
+}
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700");
+/*$tile-width: 500px; 
+$tile-height: 300px; */
+.kitandace .logo, .niner .logo, .redfin .logo {
+  -moz-transition-property: background-image;
+  -o-transition-property: background-image;
+  -webkit-transition-property: background-image;
+  transition-property: background-image;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+  margin: 0 auto;
+}
+
+.info .responsive:before, .info .netsuite:before, .info .js:before {
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 5px;
+}
+
+.tile {
+  margin: 10px;
+  position: relative;
+  width: 31%;
+  height: 300px;
+  min-width: 300px;
+  float: left;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.info {
+  opacity: 0;
+  color: white;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  margin-top: 30px;
+}
+.info p {
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 4px 8px;
+  margin: 2px 0;
+  font-size: 0.9em;
+}
+.info p:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.info .responsive:before, .info .netsuite:before, .info .js:before {
+  content: '\f109';
+}
+
+.more {
+  opacity: 0;
+  color: black;
+  margin-top: 15px;
+  /*  position: absolute; 
+    bottom: 15px; 
+    right: 0; 
+    left: 0; */
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+  text-align: center;
+}
+.more a {
+  display: inline-block;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1em;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+  padding: 4px 8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+.more a:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  /*background: rgba(255,255,255,0.9);*/
+  background: white;
+  height: 2px;
+  -moz-transition-property: left, right;
+  -o-transition-property: left, right;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.more a:hover:before {
+  left: 10%;
+  right: 10%;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.3);
+  -moz-transition-property: background;
+  -o-transition-property: background;
+  -webkit-transition-property: background;
+  transition-property: background;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+  position: absolute;
+  top: 0;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+}
+
+.kitandace {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://3.bp.blogspot.com/-BHBIUHfRxWA/VKhEDw_HunI/AAAAAAAAAJM/WOYmgYLzYH8/s1600/mohit.jpg");
+  z-index: -11;
+}
+.kitandace:hover .logo {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/235825/kitandace-color.png");
+}
+.kitandace:hover .overlay {
+  background: rgba(255, 255, 255, 0.5);
+}
+.kitandace:hover .info {
+  opacity: 1;
+}
+.kitandace:hover .more {
+  opacity: 1;
+}
+.kitandace .logo {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/235825/kitandace-white.png");
+  width: 140px;
+  height: 43px;
+  margin-top: 80px;
+}
+@media (min-width: 480px) {
+  .kitandace .logo {
+    margin-top: 100px;
+  }
+}
+
+.niner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://www.punjabicelebs.com/wp-content/uploads/2016/02/EV118472_gal_20151230120939.jpg");
+  z-index: -11;
+}
+.niner:hover .logo {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/235825/Niner-logo-color.png");
+}
+.niner:hover .overlay {
+  background: rgba(255, 255, 255, 0.5);
+}
+.niner:hover .info {
+  opacity: 1;
+}
+.niner:hover .more {
+  opacity: 1;
+}
+.niner .logo {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/235825/Niner-logo-white.png");
+  width: 140px;
+  height: 43px;
+  margin-top: 80px;
+}
+@media (min-width: 480px) {
+  .niner .logo {
+    margin-top: 100px;
+  }
+}
+
+.redfin {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://dubeat.com/wp-content/uploads/DSC08563-735x400.jpg");
+  z-index: -11;
+}
+.redfin:hover .logo {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/235825/redfin-color.jpg");
+}
+.redfin:hover .overlay {
+  background: rgba(255, 255, 255, 0.5);
+}
+.redfin:hover .info {
+  opacity: 1;
+}
+.redfin:hover .more {
+  opacity: 1;
+}
+.redfin .logo {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/235825/redfin-white.png");
+  width: 140px;
+  height: 43px;
+  margin-top: 80px;
+}
+@media (min-width: 480px) {
+  .redfin .logo {
+    margin-top: 50px;
+  }
+}
+
+
+
+.test {
+	float: left;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	overflow-x: hidden;
+}
+.viewport {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	opacity: 0;
+
+	    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
+#left {
+	background-image: url(./images/alfaaz.jpg);
+	    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
+#center {
+		opacity: 1;
+		background-image: url(./images/mohit.jpg);
+		    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
+#right {
+	background-image: url(./images/sharry.jpg);
+	    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
+
+
+@-webkit-keyframes munch {
+  0%,
+  100% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes munch {
+  0%,
+  100% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes bite {
+  0%,
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  50% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+@keyframes bite {
+  0%,
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  50% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+@-webkit-keyframes pacman-move {
+  0% {
+    -webkit-transform: translateX(-220px);
+            transform: translateX(-220px);
+  }
+  100% {
+    -webkit-transform: translateX(220px);
+            transform: translateX(220px);
+  }
+}
+@keyframes pacman-move {
+  0% {
+    -webkit-transform: translateX(-220px);
+            transform: translateX(-220px);
+  }
+  100% {
+    -webkit-transform: translateX(220px);
+            transform: translateX(220px);
+  }
+}
+@-webkit-keyframes cookie-opacity {
+  20% {
+    opacity: 1;
+  }
+  22% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes cookie-opacity {
+  20% {
+    opacity: 1;
+  }
+  22% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.random_gif{    position: absolute;
+    max-width: 200px;
+    left: 0;
+    opacity: 0.5;
+    bottom: 0;
+    padding: 5em;}
+
+.tiles{    position: absolute;
+    z-index: 99;
+    left: 0;
+    right: 0;
+    margin-top: 160px;}
+.tiles .ctile{   position: relative;
+    /* padding-left: 50px; */
+    padding: 30px 30px 30px 20px;
+    color: #fff;
+    background: #0000;
+    margin: 25px;
+    font-size: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 155px;
+    background-image: url(https://img.clipartxtras.com/3f72c553748d8363e0bc4526eb06ea74_tv-clipart-old-fashioned-tv-clipart_1017-591.svg);
+    display: inline-block;}
+.tiles .ctile:hover{
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.l-arrow{
+    color: #fff;
+    text-align: center;
+    display: block;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    cursor: pointer;
+    font-size: 3em;
+    right: 0;
+    position: absolute;
+    left:10;
+    padding:1em;
+    top:30%;z-index: 100;}
+
+
+    .r-arrow{
+    color: #fff;
+    text-align: center;
+    display: block;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    cursor: pointer;
+    font-size: 3em;
+    z-index: 100;
+    right: 10;
+    position: absolute;
+    left:0;
+    padding:1em;
+    top:30%;}
+
+
+@media (max-width: 480px) {
+.title{width: 100%; padding: 10px 0px;}
+.title img{width: 92% !important;}
+.title h3{font-size: 12px;}
+.fbutton{margin-top:4em !important;}
+
+.tiles{margin-top: 10px !important;}
+.arrow-down{margin-bottom: 100px;}
+.l-arrow{padding: 0.3em;}
+.r-arrow{padding: 0.3em;}
+.random_gif{display: none;}
+.tiles .ctile{
+    padding: 25px;
+    margin: 25px;
+    font-size: 15px;
+    width: 120px;
+    }
+}
+
+
+
+</style>
+
+</head>
+<body onscroll="openNav2()">
+
+<div class="timer">
+    <p id="demo" style="font-size:30px"></p>
+</div>
+
+<div style="    z-index: 10;
+    position: absolute;
+    display: block;
+    background: linear-gradient(120deg, #6559ae, #ff7159, #6559ae);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-animation: gradient 3s ease-in-out infinite;
+    -webkit-animation: gradient 3s ease-in-out infinite;
+    animation: gradient 3s ease-in-out infinite;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    cursor:pointer;font-size:2.5em;padding: 1em;right:0;" onclick="openNav()">&#9776; </div>
+
+<div style="       z-index: 10;
+    position: absolute;
+    display: block;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    cursor: pointer;
+    font-size: 2.5em;
+    padding: 1em;
+    right: 0;
+    left: 0;
+    bottom: 0;"  ><div class="arrow-down" onclick="openNav2()">
+  
+  
+  <div class="left"></div>
+  <div class="right"></div>
+  
+</div></div>
+
+<div id="mySidenav2" class="sidenav2">
+  <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
+</br>
+
+
+
+	
+
+
+	<p class="l-arrow">></p>
+	
+	
+	<p class="r-arrow"><</p>
+
+<div class="tiles" style="position: absolute;z-index: 99;">
+	
+	<div class="wrap">
+		<div class="ctile">75+ <br>Events</div>
+		<div class="ctile">300+ <br>Colleges</div>
+		<div class="ctile">12000+ <br>Footfall</div>
+	</div>
+
+
+</div>
+
+
+
+<div class="test" style="margin-top: -100px;">
+	 	<div class="viewport" id="left"></div>
+	 	<div class="viewport" id="center"></div>
+	 	<div class="viewport" id="right"></div>
+	</div>
+
+
+
+</div>
+
+<div id="mySidenav" class="sidenav">
+
+<img src="./images/mario.gif" class="random_gif">
+
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#" class="z_home">Home</a>
+  <a href="#" class="z_about">About Us</a>
+  <a href="cr/" class="z_rep">College Representative</a>
+  <a href="events/" class="z_events">Events</a>
+  <a href="#" class="z_pro">Pro Nights</a>
+  <a href="sponsors/" class="z_sponsors">Sponsors</a>
+	<a href="#" class="z_init">Accomodation</a>
+	<a href="#" class="z_init">Team</a>
+</div>
+
+<div class="social">
+ <a href="https://www.facebook.com/zeitgeist.iitrpr/" target="_blank"><i class="fab fa-facebook"></i></a>
+  <a href=" https://www.instagram.com/zeitgeist_iitrpr/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+
+ <a href=" https://twitter.com/zeitgeist_rpr?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
+
+
+</a>
+
+</div>
+
+
+<div class="background" style="overflow: hidden;"></div>
+<div class="title">
+	    <h3>19 October - 21 October </h3>
+
+  <img src="./images/zeit_wide.png" style="width:70%;">
+
+  <a href="events/" class="fbutton" ><span>Register</span></a>
+
+
+</div>
+
+<script src="  https://w3x10e8.github.io/zmain/js/jquery-2.1.3.min.js"></script>
+
+
+<script type="text/javascript">
+	
+var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}var Particle = function () {
+
+  function Particle(svg, coordinates, friction) {_classCallCheck(this, Particle);
+    this.svg = svg;
+    this.steps = $(window).height() / 2;
+    this.item = null;
+    this.friction = friction;
+    this.coordinates = coordinates;
+    this.position = this.coordinates.y;
+    this.dimensions = this.render();
+    this.rotation = Math.random() > 0.5 ? "-" : "+";
+    this.scale = 0.5 + Math.random();
+    this.siner = 200 * Math.random();
+  }_createClass(Particle, [{ key: "destroy", value: function destroy()
+
+    {
+      this.item.remove();
+    } }, { key: "move", value: function move()
+
+    {
+      this.position = this.position - this.friction;
+      var top = this.position;
+      if( $(window).width() < 400){var left = this.coordinates.x + Math.sin(this.position * Math.PI / this.steps) * this.siner - 230;} 
+      else{var left = this.coordinates.x + Math.sin(this.position * Math.PI / this.steps) * this.siner} 
+      this.item.css({
+        transform: "translateX(" + left + "px) translateY(" + top + "px) scale(" + this.scale + ") rotate(" + this.rotation + (this.position + this.dimensions.height) + "deg)" });
+
+
+      if (this.position < -this.dimensions.height) {
+        this.destroy();
+        return false;
+      } 
+
+if (this.position < -this.dimensions.height) {
+        this.destroy();
+        return false;
+      } 
+      else {
+        return true;
+      }
+    } }, { key: "render", value: function render()
+
+    {
+      this.item = $(this.svg, {
+        css: {
+          transform: "translateX(" + this.coordinates.x + "px) translateY(" + this.coordinates.y + "px)" } });
+
+
+      $("body").append(this.item);
+      return {
+        width: this.item.width(),
+        height: this.item.height() };
+
+    } }]);return Particle;}();
+
+
+var rhombus = '<svg viewBox="0 0 13 14"><path class="rhombus" d="M5.9,1.2L0.7,6.5C0.5,6.7,0.5,7,0.7,7.2l5.2,5.4c0.2,0.2,0.5,0.2,0.7,0l5.2-5.4 C12,7,12,6.7,11.8,6.5L6.6,1.2C6.4,0.9,6.1,0.9,5.9,1.2L5.9,1.2z M3.4,6.5L6,3.9c0.2-0.2,0.5-0.2,0.7,0l2.6,2.6 c0.2,0.2,0.2,0.5,0,0.7L6.6,9.9c-0.2,0.2-0.5,0.2-0.7,0L3.4,7.3C3.2,7.1,3.2,6.8,3.4,6.5L3.4,6.5z" /></svg>';
+
+var pentahedron = '<svg viewBox="0 0 561.8 559.4"><path class="pentahedron" d="M383.4,559.4h-204l-2.6-0.2c-51.3-4.4-94-37-108.8-83l-0.2-0.6L6,276.7l-0.2-0.5c-14.5-50,3.1-102.7,43.7-131.4 L212.1,23C252.4-7.9,310.7-7.9,351,23l163.5,122.5l0.4,0.3c39,30.3,56,82.6,42.2,130.3l-0.3,1.1l-61.5,198 C480.4,525.6,435.5,559.4,383.4,559.4z M185.5,439.4h195.2l61.1-196.8c0-0.5-0.3-1.6-0.7-2.1L281.5,120.9L120.9,241.2 c0,0.3,0.1,0.7,0.2,1.2l60.8,195.8C182.5,438.5,183.7,439.1,185.5,439.4z M441,240.3L441,240.3L441,240.3z"/></svg>';
+var x = '<svg viewBox="0 0 12 12"> <path class="x" d="M10.3,4.3H7.7V1.7C7.7,0.8,7,0,6,0S4.3,0.8,4.3,1.7v2.5H1.7C0.8,4.3,0,5,0,6s0.8,1.7,1.7,1.7h2.5v2.5 C4.3,11.2,5,12,6,12s1.7-0.8,1.7-1.7V7.7h2.5C11.2,7.7,12,7,12,6S11.2,4.3,10.3,4.3z"/></svg>';
+
+var circle = '<svg x="0px" y="0px" viewBox="0 0 13 12"> <path class="circle" d="M6.5,0.1C3.4,0.1,0.8,2.8,0.8,6s2.6,5.9,5.7,5.9s5.7-2.7,5.7-5.9S9.7,0.1,6.5,0.1L6.5,0.1z M6.5,8.8 C5,8.8,3.8,7.6,3.8,6S5,3.2,6.5,3.2S9.2,4.4,9.2,6S8,8.8,6.5,8.8L6.5,8.8z"/> </svg>';
+
+var point = '<svg viewBox="0 0 12 12"> <path class="point" d="M6,7.5L6,7.5C5.1,7.5,4.5,6.9,4.5,6v0c0-0.9,0.7-1.5,1.5-1.5h0c0.9,0,1.5,0.7,1.5,1.5v0C7.5,6.9,6.9,7.5,6,7.5z "/> </svg>';
+
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+var data = [point, rhombus, circle, x];
+
+var isPaused = false;
+window.onblur = function () {
+  isPaused = true;
+}.bind(undefined);
+window.onfocus = function () {
+  isPaused = false;
+}.bind(undefined);
+
+var particles = [];
+if( $(window).width() < 400){
+setInterval(function () {
+  if (!isPaused) {
+    particles.push(
+    new Particle(data[randomInt(0, data.length - 1)], {
+      "x": Math.random() * $(window).width(),
+      "y": $(window).height() },
+    1 + Math.random() * 3));
+
+  }
+}, 1000);}
+
+else{
+	setInterval(function () {
+  if (!isPaused) {
+    particles.push(
+    new Particle(data[randomInt(0, data.length - 1)], {
+      "x": Math.random() * $(window).width(),
+      "y": $(window).height() },
+    1 + Math.random() * 3));
+
+  }
+}, 200);
+}
+
+function update() {
+  particles = particles.filter(function (p) {
+    return p.move();
+  });
+  requestAnimationFrame(update.bind(this));
+}
+update();
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+function openNav2() {
+    document.getElementById("mySidenav2").style.height = "100%";
+    $("#mySidenav2").css("margin-top","0px");
+}
+
+function closeNav2() {
+    document.getElementById("mySidenav2").style.height= "0";
+    $("#mySidenav2").css("margin-top","-150px");
+
+
+};
+
+
+$(".z_events").hover(function () {
+    $(".sidenav").css("background-image","url(./images/guitar.gif);")
+}, function () {
+    $(".sidenav").css("background-image","url(./images/wizard_attack.gif);")
+});
+
+
+		var view = $(window),
+			width = view.width(),
+			leftMark = (width/10),
+			centerMark = (width/2),
+			rightMark = (width*0.9),
+			viewport = $('.viewport'),
+			left = viewport.eq(0),
+			center = viewport.eq(1),
+			right = viewport.eq(2);
+
+if( $(window).width() > 400){
+			
+		$(document).mousemove(function(e) {
+			var mouseX = e.pageX;
+			//left
+			if (mouseX <= leftMark) {
+				left.css('opacity', '1'),
+				center.hide();
+			}
+			//left center
+			else if (mouseX >= leftMark && mouseX <= centerMark) {
+				var opacLeft = Math.pow((leftMark/mouseX), 2),
+						opacCenter = Math.pow((mouseX/centerMark), 2);
+
+				center.show(),
+				left.show(),
+				right.hide();
+
+				left.css('opacity', opacLeft),
+				center.css('opacity', opacCenter);
+			}
+			//center right
+			else if (mouseX >= centerMark && mouseX <= rightMark) {
+				var opacCenter = Math.pow((centerMark/mouseX), 2),
+					opacRight = Math.pow((mouseX/rightMark), 2);
+
+				center.show(),
+				right.show(),
+				left.hide();
+
+				center.css('opacity', opacCenter),
+				right.css('opacity', opacRight);
+			}
+			//right
+			else if (mouseX >= rightMark) {
+				right.css('opacity', '1'),
+				center.hide();
+			}
+		});
+
+}
+
+
+else{
+
+	$(".l-arrow").click(function() {
+	$l_o = $(left).css("opacity");
+	$c_o = $(center).css("opacity");
+	
+
+	if($l_o == 0 && $c_o !=0){
+		left.css('opacity', '0');
+		center.css('opacity', '0');
+		right.css('opacity', '1');
+
+
+	}
+
+	if($l_o !=0 && $c_o==0){
+		left.css('opacity', '0');
+		right.css('opacity', '0');
+		center.css('opacity', '1');
+	}
+	
+
+
+  
+}); 
+
+
+	$(".r-arrow").click(function() {
+	$r_o = $(right).css("opacity");
+	$c_o = $(center).css("opacity");
+
+	
+	
+
+	if($r_o == 0 && $c_o !=0){
+		right.css('opacity', '0');
+		center.css('opacity', '0');
+		left.css('opacity', '1');
+
+
+	}
+
+	if($r_o !=0 && $c_o==0){
+		right.css('opacity', '0');
+		left.css('opacity', '0');
+		center.css('opacity', '1');
+	}
+	
+
+
+  
+}); 
+
+
+	
+}
+
+		// Set the date we're counting down to
+var countDownDate = new Date("Oct 18, 2018 24:00:00").getTime();
+
+// Update the count down every 1 second
+var countdownfunction = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + " <span style='font-size:14px;font-weight:400;'>Days</span>";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("demo").innerHTML = "Enjoy the fiesta";
+    }
+}, 1000);
+
+
+
+</script>
+
+</body>
+</html>

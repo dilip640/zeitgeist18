@@ -1,0 +1,70 @@
+
+.nav-bg {
+    background-image: url('../images/menu.jpg');
+}
+.home-bg {
+    background-image: url('../images/bg/06.jpg');
+}
+.about-bg {
+    background-image: url('../images/bg/06.jpg');
+}
+.journal-bg {
+    background-image: url('../images/bg/01.jpg');
+}
+.contact-bg {
+    background-image: url('../images/bg/03.jpg');
+}
+.project-01-carousel-item-01{
+	background-image: url('../images/project/project01/01.jpg');
+}
+.project-01-carousel-item-02{
+	background-image: url('../images/project/project01/02.jpg');
+}
+.project-01-carousel-item-03{
+	background-image: url('../images/project/project01/03.jpg');
+}
+.parallax-showcase-01{
+	background-image: url('../images/project/project01/02.jpg');
+}
+.parallax-showcase-02{
+	background-image: url('../images/project/project01/01.jpg');
+}
+.parallax-showcase-03{
+	background-image: url('../images/project/project01/03.jpg');
+}
+.call-to-action-bg{
+    background-image: url('../images/bg/01.jpg');
+}
+.stats-bg{
+    background-image: url('../images/bg/05.jpg');
+}
+.journal.signature-stefan .news-block-01:hover{
+    background-image: url('../images/news/01.jpg');
+}
+.journal.signature-stefan .news-block-02:hover{
+    background-image: url('../images/news/02.jpg');
+}
+.journal.signature-stefan .news-block-03:hover{
+    background-image: url('../images/news/03.jpg');
+}
+.journal.signature-stefan .news-block-04:hover{
+    background-image: url('../images/news/04.jpg');
+}
+.journal.signature-stefan .news-block-05:hover{
+    background-image: url('../images/news/05.jpg');
+}
+.journal.signature-stefan .news-block-06:hover{
+    background-image: url('../images/news/06.jpg');
+}
+.post-bg{
+    background-image: url('../images/news/post/01.jpg');
+}
+.project-01-bg{
+    background-image: url('../images/project/project01/01.jpg');
+}
+.project-02-bg{
+    background-image: url('../images/project/project01/02.jpg');
+}
+.project-03-bg{
+    background-image: url('../images/project/project01/03.jpg');
+}
